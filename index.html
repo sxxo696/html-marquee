@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Yogyakarta International Airport</title>
+    <style>
+        /* Pengaturan untuk menghilangkan margin bawaan */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Pembungkus utama marquee */
+        .marquee-container {
+            background-color: #0b1d3a; /* Warna biru gelap */
+            color: #ffffff; /* Warna teks putih */
+            border: none; /* Tidak ada border */
+            height: 60px; /* Tinggi area teks berjalan */
+            width: 100%;
+            overflow: hidden; /* Menyembunyikan elemen yang keluar layar */
+            position: relative;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Opsional: Bayangan agar lebih elegan */
+        }
+
+        /* Konten yang akan bergerak */
+        .marquee-content {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            padding-left: 100%; /* Membuat teks mulai dari ujung kanan layar */
+            
+            /* PENGATURAN ANIMASI */
+            /* Ubah '20s' menjadi lebih besar (misal 30s) untuk memperlambat scroll, atau sebaliknya */
+            animation: scroll-left 40s linear infinite; 
+            
+            /* PENGATURAN DELAY (Waktu Tunda) */
+            /* Ubah angka 0s menjadi 2s atau 5s jika ingin teks menunggu sebelum bergerak */
+            animation-delay: 0s; 
+            
+            /* Optimasi pergerakan halus (Hardware Acceleration) */
+            will-change: transform; 
+        }
+
+        /* Pengaturan logo */
+        .marquee-logo {
+            height: 40px; /* Tinggi logo, sesuaikan jika perlu */
+            margin-right: 15px; /* Jarak antara logo dan teks */
+            object-fit: contain;
+            background: #fff;
+        }
+
+        /* Pengaturan teks */
+        .marquee-text {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Keyframes untuk pergerakan dari kanan ke kiri */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Bergerak sejauh lebar elemen ke arah kiri */
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- LOGO: Ganti atribut src dengan link atau lokasi file logo Anda (misal: "logo-yia.png") -->
+            <!-- Sebagai contoh, saya menggunakan ikon placeholder pesawat SVG bawaan -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Yogyakarta_International_Airport_Logo.png?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo YIA" class="marquee-logo">
+            
+            <!-- TEKS -->
+            <span class="marquee-text">SELAMAT DATANG DI YOGYAKARTA INTERNATIONAL AIRPORT | WELCOME TO YOGYAKARTA INTERNATIONAL AIRPORT &ensp; </span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Yogyakarta_International_Airport_Logo.png?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo YIA" class="marquee-logo">
+            <span class="marquee-text">SIAPKAN TIKET DAN IDENTITAS ANDA | PLEASE PREPARE YOUR TICKET AND IDENTITY &ensp;</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Yogyakarta_International_Airport_Logo.png?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo YIA" class="marquee-logo">
+        </div>
+    </div>
+
+</body>
+</html>
